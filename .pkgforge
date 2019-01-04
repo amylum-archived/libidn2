@@ -14,6 +14,8 @@ configure_flags(
   prefix: '/usr',
   'with-libunistring-prefix': "#{dep(:libunistring)}/usr"
 )
+remove_pkgconfig_files
+remove_linker_archives
 
 harden
 cflags
