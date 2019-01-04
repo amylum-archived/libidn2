@@ -1,0 +1,21 @@
+Prospectus.extra_dep('file', 'prospectus_pkgforge')
+Prospectus.extra_dep('file', 'prospectus_travis')
+
+pkgforge = PkgForge.load_from_file
+my_slug = pkgforge.org + '/' + pkgforge.name
+
+item do
+  expected do
+    gitlab_tag
+    repo 'libidn/libidn2'
+    regex /^libidn2-([\d.]+)$/
+  end
+
+  actual do
+    git_tag
+    regex /^(.*)-\d+$/
+  end
+
+  extend ProspectusPkgforge::DepItems
+  extend ProspectusTravis::Build.new(my_slug)
+end

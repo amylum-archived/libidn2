@@ -1,0 +1,21 @@
+name 'libidn2'
+org 'amylum'
+
+licenses 'COPYINGv2'
+
+configure_flags(
+  prefix: '/usr'
+)
+
+harden
+
+build do
+  run './bootstrap'
+  configure
+  make
+  install
+end
+
+test do
+  # TODO: tests
+end
