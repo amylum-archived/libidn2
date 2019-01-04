@@ -11,7 +11,7 @@ deps(
 )
 
 configure_flags(
-  prefix: '/usr'
+  prefix: '/usr',
   'with-libunistring-prefix': "#{dep(:libunistring)}/usr"
 )
 
