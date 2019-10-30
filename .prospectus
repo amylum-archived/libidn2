@@ -8,7 +8,7 @@ item do
   expected do
     gitlab_tag
     repo 'libidn/libidn2'
-    regex /^libidn2-([\d.]+)$/
+    regex /^([\d.]+)$/
   end
 
   actual do
